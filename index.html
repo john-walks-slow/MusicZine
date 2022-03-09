@@ -95,9 +95,13 @@
       }
     ]
     let soundList = musicList.map(music => new Howl({
-      src: [`music/${music.title} - ${music.artist}.mp3`]
+      src: [`music/${music.title} - ${music.artist}.mp3`],
+      preload: false
     }))
     let player = document.getElementById('MusicStatus');
+    window.addEventListener('load', () => {
+      soundList.forEach(s => s.load())
+    })
 
     function playMusic(element) {
       music && music.pause();

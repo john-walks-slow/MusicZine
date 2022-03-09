@@ -34,7 +34,7 @@ body {
 #Main {
   width: 2480px;
   height: 3508px;
-  background-image: url(main.jpg);
+  background-image: url(main-compressed.jpg);
 }
 .player {
   z-index: 999;
