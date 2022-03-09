@@ -2,14 +2,33 @@ body {
   margin: 0;
   padding: 0;
   background-color: black;
+  color: white;
 }
 * {
   user-select: none;
+}
+#LoadingText {
+  color: white;
+  font-size: 20px;
+  margin-top: 40vh;
+  position: fixed;
+  text-align: center;
+  width: 100vw;
+}
+#LoadingText.hide {
+  display: none;
 }
 #MainContainer {
   /* zoom: 0.3; */
   position: relative;
   zoom: 0.25;
+  opacity: 0;
+  transition: 1000ms;
+  pointer-events: none;
+}
+#MainContainer.show {
+  opacity: 1;
+  pointer-events: initial;
 }
 
 #PlayerContainer {
@@ -34,7 +53,7 @@ body {
 #Main {
   width: 2480px;
   height: 3508px;
-  background-image: url(main-compressed.jpg);
+  /* background-image: url(main-compressed.jpg); */
 }
 .player {
   z-index: 999;

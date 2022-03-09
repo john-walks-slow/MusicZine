@@ -12,10 +12,11 @@
 </head>
 
 <body>
-
+  <div id="LoadingText"> Now Loading... </div>
   <div id="MainContainer">
     <div id="Main">
-      <div id="MusicStatus"> </div>
+      <img src="main-compressed.jpg" alt="" srcset="">
+      <div id="MusicStatus"></div>
       <div id="PlayerContainer">
         <div class="player" data-music="0" onclick="playMusic(this)"></div>
         <div class="player" data-music="1" onclick="playMusic(this)"></div>
@@ -70,7 +71,7 @@
         artist: "Butterglory"
       },
       {
-        title: "おだいじに",
+        title: "odaijini",
         artist: "椎名林檎"
       },
       {
@@ -100,7 +101,9 @@
     }))
     let player = document.getElementById('MusicStatus');
     window.addEventListener('load', () => {
-      soundList.forEach(s => s.load())
+      // soundList.forEach(s => s.load())
+      document.getElementById('MainContainer').className = "show"
+      document.getElementById('LoadingText').className = "hide"
     })
 
     function playMusic(element) {
@@ -109,6 +112,7 @@
       let previous = music
       let id = parseInt(element.dataset.music)
       music = soundList[id];
+      music.load()
       if (music == previous) {
         music = null
       } else {
