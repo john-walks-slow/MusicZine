@@ -21,7 +21,7 @@ body {
 #MainContainer {
   /* zoom: 0.3; */
   position: relative;
-  zoom: 0.25;
+  zoom: 0.2;
   opacity: 0;
   transition: 1000ms;
   pointer-events: none;
