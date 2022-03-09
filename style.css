@@ -1,0 +1,120 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+* {
+  user-select: none;
+}
+#MainContainer {
+  /* zoom: 0.3; */
+  position: relative;
+  zoom: 0.25;
+}
+
+#PlayerContainer {
+  position: absolute;
+  left: 8px;
+  top: 1200px;
+  width: 1600px;
+  height: 767px;
+}
+@media (min-width: 700px) {
+  #MainContainer {
+    zoom: 0.3;
+    margin: 100px 300px;
+  }
+}
+@media (min-width: 1100px) {
+  #MainContainer {
+    margin: 100px auto;
+    width: 50%;
+  }
+}
+#Main {
+  width: 2480px;
+  height: 3508px;
+  background-image: url(main.jpg);
+}
+.player {
+  z-index: 999;
+  cursor: pointer;
+  width: 350px;
+  height: 350px;
+  margin: 15px 13px;
+  display: inline-block;
+  background-color: transparent;
+}
+#PlayerContainerBottom {
+  position: absolute;
+  left: 80px;
+  top: 2970px;
+  width: 1600px;
+  height: 767px;
+}
+.playerBottom {
+  z-index: 999;
+  cursor: pointer;
+  width: 350px;
+  height: 350px;
+  margin-right: 154px;
+  display: inline-block;
+  background-color: transparent;
+}
+#SM {
+  position: absolute;
+  z-index: 999;
+  width: 420px;
+  height: 220px;
+  left: 1096px;
+  top: 1993px;
+  /* width: 1600px;
+  height: 767px; */
+}
+#MH {
+  position: absolute;
+  z-index: 999;
+  top: 3027px;
+  left: 1700px;
+  width: 450px;
+}
+#Dolphin {
+  position: absolute;
+
+  z-index: 999;
+  left: 1096px;
+  top: 2243px;
+  width: 470px;
+  height: 200px;
+}
+#MusicStatus {
+  position: absolute;
+  left: 10px;
+  top: 350px;
+  color: yellow;
+  font-size: 50px;
+  font-weight: bold;
+  font-style: italic;
+  /* font-family: Arial; */
+  width: auto;
+  line-height: 1.5;
+  margin: 30px;
+}
+#HiddenPlayer1 {
+  position: absolute;
+  z-index: 999;
+  cursor: pointer;
+  left: 71px;
+  top: 3420px;
+  width: 448px;
+  height: 54px;
+}
+#HiddenPlayer2 {
+  position: absolute;
+  z-index: 999;
+  cursor: pointer;
+  left: 1620px;
+  top: 3400px;
+  width: 869px;
+  height: 80px;
+}

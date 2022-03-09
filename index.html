@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>我喜歡的音樂</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="libs/howler.core.min.js"></script>
+
+</head>
+
+<body>
+
+  <div id="MainContainer">
+    <div id="Main">
+      <div id="MusicStatus"> </div>
+      <div id="PlayerContainer">
+        <div class="player" data-music="0" onclick="playMusic(this)"></div>
+        <div class="player" data-music="1" onclick="playMusic(this)"></div>
+        <div class="player" data-music="2" onclick="playMusic(this)"></div>
+        <div class="player" data-music="3" onclick="playMusic(this)"></div>
+        <div class="player" data-music="4" onclick="playMusic(this)"></div>
+        <div class="player" data-music="5" onclick="playMusic(this)"></div>
+        <div class="player" data-music="6" onclick="playMusic(this)"></div>
+        <div class="player" data-music="7" onclick="playMusic(this)"></div>
+      </div>
+      <div id="PlayerContainerBottom">
+        <div class="playerBottom" data-music="8" onclick="playMusic(this)"></div>
+        <div class="playerBottom" data-music="9" onclick="playMusic(this)"></div>
+        <div class="playerBottom" data-music="10" onclick="playMusic(this)"></div>
+      </div>
+      <div id="HiddenPlayer1" data-music="11" onclick="playMusic(this)"></div>
+      <div id="HiddenPlayer2" data-music="12" onclick="playMusic(this)"></div>
+      <img id="Dolphin" src="dolphin.gif" alt="">
+      <img id="SM" src="sm.gif" alt="">
+      <img id="MH" src="mh.gif" alt="">
+    </div>
+  </div>
+
+  <script>
+    let music;
+    let musicList = [{
+        title: "大家都唾棄的低能婐爱ㄋ",
+        artist: "海豚刑警"
+      },
+      {
+        title: "shy song 2012",
+        artist: "午休失眠"
+      },
+      {
+        title: "午夜的直球對決",
+        artist: "午夜乒乓"
+      },
+      {
+        title: "无所畏惧与宽容",
+        artist: "来吧！焙焙！"
+      },
+      {
+        title: "Silence Kid",
+        artist: "Pavement"
+      },
+      {
+        title: "Plea From A Cat Named Virtute",
+        artist: "The Weakerthans"
+      },
+      {
+        title: "Demons and Avalanches",
+        artist: "Butterglory"
+      },
+      {
+        title: "おだいじに",
+        artist: "椎名林檎"
+      },
+      {
+        title: "hasibe",
+        artist: "小齐"
+      },
+      {
+        title: "我的心中没有爱(cover太空蛋糕)byebyeromantic ver",
+        artist: "小齐"
+      },
+      {
+        title: "Show Your Art",
+        artist: "小齐"
+      },
+      {
+        title: "No More Shoes",
+        artist: "Stephen Malkmus"
+      },
+      {
+        title: "Loud Cloud Crowd",
+        artist: "Stephen Malkmus"
+      }
+    ]
+    let soundList = musicList.map(music => new Howl({
+      src: [`music/${music.title} - ${music.artist}.mp3`]
+    }))
+    let player = document.getElementById('MusicStatus');
+
+    function playMusic(element) {
+      music && music.pause();
+      player.innerHTML = ``
+      let previous = music
+      let id = parseInt(element.dataset.music)
+      music = soundList[id];
+      if (music == previous) {
+        music = null
+      } else {
+        music.play();
+        player.innerHTML = `Now Playing: ${musicList[id].title} from ${musicList[id].artist}`
+      }
+    }
+  </script>
+</body>
+
+</html>
