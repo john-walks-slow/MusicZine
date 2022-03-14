@@ -75,7 +75,7 @@
         artist: "椎名林檎"
       },
       {
-        title: "hasibe",
+        title: "烦恼的星期六",
         artist: "小齐"
       },
       {
@@ -96,8 +96,8 @@
       }
     ]
     let soundList = musicList.map(music => new Howl({
-      src: [`music/${music.title} - ${music.artist}.mp3`],
-      preload: false
+      src: [`music/${music.title} - ${music.artist}.aac`],
+      preload: true
     }))
     let player = document.getElementById('MusicStatus');
     window.addEventListener('load', () => {
